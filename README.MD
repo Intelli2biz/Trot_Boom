@@ -44,7 +44,8 @@ remD$open()
 remoteDriver() 함수를 통해 4445번 포트와 크롬을 연결시켜준 뒤, remDr$open() 함수를 입력하여 크롬 웹창이 열리도록 합니다. 
 
 ```
-​```{r}
+
+```{r}
 search <- function(name, page){
   remD$navigate(paste0("https://www.genie.co.kr/search/searchSong?query=", name, "&page=", page))
   html <- remD$getPageSource()[[1]]
@@ -53,13 +54,13 @@ search <- function(name, page){
   title <- NULL
   artist <- NULL
   number <- NULL
-​```
+```
 ```
 
 remDr$navigate() 함수 내부에 크롤링하고자 하는 지니 사이트를 입력하면 해당 주소로 이동하여 크롤링할 수 있게 됩니다. 수집하고자 하는 title, artist, number에는 먼저 NULL값을 주고 크롤링을 통해 값을 채워주겠습니다. 
 
 ```
-​```{r}
+```{r}
   artist <- html %>% html_nodes(".info .artist") %>%
     html_text()
   artist <- gsub("\n", "", artist)
@@ -74,7 +75,6 @@ remDr$navigate() 함수 내부에 크롤링하고자 하는 지니 사이트를 
   number <- gsub("songid", "", number)
   
   df <- data.frame(number, artist)
-  ```
 ```
 
 

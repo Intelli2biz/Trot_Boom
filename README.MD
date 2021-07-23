@@ -35,7 +35,7 @@ library(xml2)
 
 RSelenium을 통해 국내 음원 사이트 지니(genie) TOP 200 월간 차트, “사랑의 콜센터” 등의 특정 키워드 검색으로 나오는 데이터과 특정 장르 내 차트 등을 크롤링하여 원하는 내용의 데이터를 수집했습니다.
 
-3.1.데이ㅓㅏ러ㅓ사ㅓ;ㅁ
+3.1.
 
 ```
 remD <- remoteDriver(port = 4445L, browserName = “chrome”)
